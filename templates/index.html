@@ -16,11 +16,10 @@
 
     <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
         {% for file in uploadedFiles %}
-            <div class="{{ file }}" style="display: flex; flex-direction: column; padding: 10px;">
-                <a href="" download="{{ file }}">
+            <div class="{{ file }}" style="padding: 10px;">
+                <a href="" download="{{ file }}" style="display: flex; flex-direction: column;">
                     <h4 style="align-self: center;">{{ file }}</h4>
                     <img src="{{ uploadPath }}{{ file }}" alt="{{ file }}" style="max-width: 200px; width: 100%; align-self: center">
-                    
                 </a>
             </div>
         {% else %}
