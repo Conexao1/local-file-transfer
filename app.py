@@ -3,7 +3,7 @@ from flask import Flask, redirect, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 from markupsafe import escape
 
-
+a
 
 app = Flask(__name__)
 uploadPath = "".join(("./static/", input(str("Where do you want you upload files? ")).replace("\\", "/"))) # where your upload files are going to
