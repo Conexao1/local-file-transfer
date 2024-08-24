@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <title>Local Transfer</title>
 </head>
 <body>
@@ -14,10 +16,10 @@
     <h4>Current Upload Path: "{{uploadPath}}"</h4>
     <h3>Files in current Path:</h3>
 
-    <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    <main>
         {% for file in uploadedFiles %}
-            <div class="{{ file }}" style="padding: 10px;">
-                <a href="" download="{{ file }}" style="display: flex; flex-direction: column;">
+            <div class="file {{ file }}">
+                <a class="file-link" href="" download="{{ file }}" style="display: flex; flex-direction: column;">
                     <h4 style="align-self: center;">{{ file }}</h4>
                     <img src="{{ uploadPath }}{{ file }}" alt="{{ file }}" style="max-width: 200px; width: 100%; align-self: center">
                 </a>
@@ -25,7 +27,7 @@
         {% else %}
             <h1>No files uploaded</h1>
         {% endfor %}
-    </div>
+    </main>
 
 </body>
 </html>

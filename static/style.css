@@ -1,0 +1,32 @@
+* {}
+
+body {
+    background-color: #ebe5ff;
+}
+
+main {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+
+.file {
+    padding: 10px; 
+    margin: 5px;
+    background-color: #d9ceff;
+    border-radius: 5%;
+    border-top-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+.file-link{
+    display: flex; 
+    flex-direction: column;
+    color: black;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    max-width: 200px;
+    width: 100%; 
+}
