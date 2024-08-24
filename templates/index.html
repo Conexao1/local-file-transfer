@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Transfer</title>
+</head>
+<body>
+    <form method=post enctype=multipart/form-data>
+        <input type=file name=file multiple>
+        <input type=submit value=Upload onclick="noInputFile">
+    </form>
+    
+    <h4>Current Upload Path: "{{uploadPath}}"</h4>
+    <h3>Files in current Path:</h3>
+
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+        {% for file in uploadedFiles %}
+            <div class="{{ file }}" style="display: flex; flex-direction: column; padding: 10px;">
+                <a href="" download="{{ file }}">
+                    <h4 style="align-self: center;">{{ file }}</h4>
+                    <img src="{{ uploadPath }}{{ file }}" alt="{{ file }}" style="max-width: 200px; width: 100%; align-self: center">
+                    
+                </a>
+            </div>
+        {% else %}
+            <h1>No files uploaded</h1>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
