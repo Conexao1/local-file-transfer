@@ -12,7 +12,6 @@ if not uploadPath:
     uploadPath = "./static/uploads"
     if uploadPath[-1] != "/":
         uploadPath = uploadPath + "/"
-        print(uploadPath)
 
 @app.route('/', methods=['GET', 'POST'])
 def upload():
