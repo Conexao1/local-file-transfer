@@ -1,7 +1,6 @@
 import os
-from flask import Flask, redirect, render_template, request, send_from_directory, url_for
+from flask import Flask, redirect, render_template, request
 from werkzeug.utils import secure_filename
-from markupsafe import escape
 
 #uploadPath = str(input("Where do you want you upload files? ")).replace("\\", "/") # where your upload files are going to
 # i've to work on it
@@ -15,9 +14,9 @@ if not uploadPath:
         uploadPath = uploadPath + "/"
         print(uploadPath)
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload():
-    os.makedirs(uploadPath, exist_ok=True) # create a upload dir if it not exist
+    os.makedirs(uploadPath, exist_ok=True) # create an upload dir if it not exist
     if request.method == 'POST':
         if 'file' not in request.files:
             return redirect(request.url)
@@ -34,16 +33,6 @@ def upload():
             uploadedFiles.remove(file)
     print(uploadedFiles)
     return render_template("index.html", uploadPath=uploadPath, uploadedFiles=uploadedFiles)
-'''
-@app.route('/download/<fileName>', methods=['GET'])
-def download(fileName):
-    return send_from_directory(uploadPath, fileName)
-'''
-'''
-@app.route('/uploads/<name>')
-def download_file(name):
-    return send_from_directory(downloadPath, name)
-'''
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
