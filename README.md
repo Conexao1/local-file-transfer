@@ -1,7 +1,7 @@
 I always wanted transfer some files along my local network, PC to smartphone and smartphone to PC. So, I've decided to make my own local transfer.
 Of course, I still have more work to do on it, but I'm really happy because I did it just by using the documentation.
 
-Now, how can I use it?
+## Now, how can I use it?
 
 You have to execute the file "app.py", then you probably see something like it:
 
@@ -15,7 +15,7 @@ You can just upload your files right now clicking by "choose files" (or somethin
 
 <img src="uploadtutorial.png" alt="Upload Tutorial Image"/>
 
-But, how can I download?
+## But, how can I download?
 
 Just click at name or image for the file that you want.
 
